@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20171002022250) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "mensagens", force: :cascade do |t|
     t.string   "titulo"
     t.text     "corpo"
