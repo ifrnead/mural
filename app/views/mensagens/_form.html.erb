@@ -1,0 +1,29 @@
+<%= bootstrap_form_for(@mensagem) do |f| %>
+  <% if @mensagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mensagem.errors.count, "problema") %> encontrados:</h2>
+
+      <ul>
+      <% @mensagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :titulo, label: 'Título' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :corpo, label: 'Corpo' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :autor, label: 'Autor' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email, label: 'Email' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>
